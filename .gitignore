@@ -194,3 +194,9 @@ cython_debug/
 .cursorindexingignore
 
 estimates/
+
+# Development and documentation files not needed for distribution
+res_reference.md
+node_pack.md
+CLAUDE.md
+PROCEDURES.md
