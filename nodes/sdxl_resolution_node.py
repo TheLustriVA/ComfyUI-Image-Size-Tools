@@ -1,6 +1,11 @@
-import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+
+# Add the current package path to sys.path for imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+package_dir = os.path.dirname(current_dir)
+if package_dir not in sys.path:
+    sys.path.insert(0, package_dir)
 
 from utils.resolution_data import SDXL_RESOLUTIONS, validate_resolution, get_aspect_ratio_text
 
