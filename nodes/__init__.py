@@ -1,0 +1,1 @@
+# Nodes package for ComfyUI Image Size Tool

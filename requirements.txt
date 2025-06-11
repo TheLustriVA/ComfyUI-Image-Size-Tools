@@ -1,0 +1,3 @@
+# ComfyUI Image Size Tool - Zero Dependencies
+# This package intentionally has no external dependencies to ensure maximum compatibility
+# and avoid the dependency conflicts that plague many ComfyUI custom nodes.

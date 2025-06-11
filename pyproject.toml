@@ -1,0 +1,27 @@
+[project]
+name = "comfyui-image-size-tool"
+version = "0.1.0-alpha"
+description = "Resolution calculator nodes for ComfyUI with model-specific constraints and optimal bucket resolutions"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+dependencies = []
+keywords = ["comfyui", "stable-diffusion", "image-generation", "resolution", "sdxl", "flux"]
+authors = [
+    {name = "websinthe"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.urls]
+Homepage = "https://github.com/websinthe/ComfyUI-Image-Size-Tool"
+Repository = "https://github.com/websinthe/ComfyUI-Image-Size-Tool"
+Issues = "https://github.com/websinthe/ComfyUI-Image-Size-Tool/issues"
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
