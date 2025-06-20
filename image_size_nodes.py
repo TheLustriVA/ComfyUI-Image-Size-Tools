@@ -146,15 +146,47 @@ class FluxResolutionNode:
         return (width, height, aspect_ratio)
 
 
+class ImageSizeDetectorNode:
+    """
+    Image Size Detector
+    
+    Takes an image as input and outputs its dimensions as width and height integers.
+    Useful for determining the size of existing images in your ComfyUI workflow.
+    """
+    
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "image": ("IMAGE",),
+            },
+        }
+    
+    RETURN_TYPES = ("INT", "INT")
+    RETURN_NAMES = ("width", "height")
+    FUNCTION = "detect_size"
+    CATEGORY = "Image Size Tool"
+    
+    def detect_size(self, image):
+        """Extract width and height from image tensor"""
+        # Image tensor shape is [B, H, W, C]
+        # We take the first image in the batch
+        batch_size, height, width, channels = image.shape
+        
+        return (int(width), int(height))
+
+
 # Node registration for ComfyUI
 NODE_CLASS_MAPPINGS = {
     "SD15ResolutionNode": SD15ResolutionNode,
     "SDXLResolutionNode": SDXLResolutionNode,
     "FluxResolutionNode": FluxResolutionNode,
+    "ImageSizeDetectorNode": ImageSizeDetectorNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "SD15ResolutionNode": "SD 1.5 Resolution",
     "SDXLResolutionNode": "SDXL Resolution", 
     "FluxResolutionNode": "Flux.1 Dev Resolution",
+    "ImageSizeDetectorNode": "Image Size Detector",
 }
