@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#1a1a1a" rx="20"/>
+  
+  <!-- Grid pattern background -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#333" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- Main frame representing image/viewport -->
+  <rect x="80" y="80" width="240" height="180" fill="none" stroke="#4fc3f7" stroke-width="4" rx="8"/>
+  
+  <!-- Size indicator lines -->
+  <line x1="80" y1="70" x2="320" y2="70" stroke="#ff7043" stroke-width="3"/>
+  <line x1="70" y1="80" x2="70" y2="260" stroke="#ff7043" stroke-width="3"/>
+  
+  <!-- Width dimension -->
+  <text x="200" y="60" text-anchor="middle" fill="#ff7043" font-family="Arial, sans-serif" font-size="16" font-weight="bold">W</text>
+  
+  <!-- Height dimension -->
+  <text x="55" y="175" text-anchor="middle" fill="#ff7043" font-family="Arial, sans-serif" font-size="16" font-weight="bold">H</text>
+  
+  <!-- Pixel grid inside -->
+  <g opacity="0.6">
+    <rect x="120" y="120" width="20" height="20" fill="#4fc3f7"/>
+    <rect x="140" y="120" width="20" height="20" fill="#81c784"/>
+    <rect x="160" y="120" width="20" height="20" fill="#ffb74d"/>
+    <rect x="180" y="120" width="20" height="20" fill="#f48fb1"/>
+    <rect x="200" y="120" width="20" height="20" fill="#ce93d8"/>
+    <rect x="220" y="120" width="20" height="20" fill="#90caf9"/>
+    <rect x="240" y="120" width="20" height="20" fill="#a5d6a7"/>
+    <rect x="260" y="120" width="20" height="20" fill="#ffcc02"/>
+  </g>
+  
+  <!-- Tool/ruler icon -->
+  <rect x="320" y="280" width="60" height="8" fill="#ffc107" rx="4"/>
+  <rect x="344" y="276" width="2" height="16" fill="#ff9800"/>
+  <rect x="354" y="276" width="2" height="16" fill="#ff9800"/>
+  <rect x="364" y="276" width="2" height="16" fill="#ff9800"/>
+  
+  <!-- Title -->
+  <text x="200" y="330" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">SIZE</text>
+  <text x="200" y="355" text-anchor="middle" fill="#4fc3f7" font-family="Arial, sans-serif" font-size="18" font-weight="normal">TOOLS</text>
+</svg>

@@ -1,26 +1,33 @@
 [project]
-name = "comfyui-image-size-tool"
-version = "0.1.0-alpha"
-description = "Resolution calculator nodes for ComfyUI with model-specific constraints and optimal bucket resolutions"
+name = "image-size-tool"
+version = "0.2.0"
+description = "Resolution calculators and image size detection for AI models (SD 1.5, SDXL, Flux.1 Dev, WAN2.1)"
 readme = "README.md"
 license = {file = "LICENSE"}
 requires-python = ">=3.8"
 dependencies = []
-keywords = ["comfyui", "stable-diffusion", "image-generation", "resolution", "sdxl", "flux"]
+keywords = ["comfyui", "stable-diffusion", "image-generation", "resolution", "sdxl", "flux", "wan21"]
 authors = [
     {name = "websinthe"}
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Multimedia :: Graphics",
     "Topic :: Scientific/Engineering :: Artificial Intelligence"
 ]
 
 [project.urls]
-Homepage = "https://github.com/websinthe/ComfyUI-Image-Size-Tool"
-Repository = "https://github.com/websinthe/ComfyUI-Image-Size-Tool"
-Issues = "https://github.com/websinthe/ComfyUI-Image-Size-Tool/issues"
+Repository = "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tool"
+"Bug Tracker" = "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tool/issues"
+
+[tool.comfy]
+PublisherId = "TheLustriVA"
+DisplayName = "Image Size Tools"
+Icon = "https://raw.githubusercontent.com/TheLustriVA/ComfyUI-Image-Size-Tool/main/assets/icon.svg"
+Banner = "https://raw.githubusercontent.com/TheLustriVA/ComfyUI-Image-Size-Tool/main/assets/banner.svg"
+requires-comfyui = ">=0.1.0"
 
 [build-system]
 requires = ["setuptools>=45", "wheel"]

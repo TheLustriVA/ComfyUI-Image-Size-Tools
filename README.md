@@ -1,4 +1,4 @@
-# ComfyUI Image Size Tool
+# ComfyUI Image Size Tools
 
 A professional resolution calculator node pack for ComfyUI that provides model-specific, constraint-aware image dimensions for optimal AI generation quality.
 
@@ -39,23 +39,48 @@ This tool solves the **resolution calculation problem** by providing curated, mo
 - **Hardware-optimized** for common use cases
 - **Outputs:** `width`, `height`, `aspect_ratio`
 
+### WAN2.1 Resolution
+- **4 core video presets** - 480p and 720p in landscape/portrait
+- **Even-number dimensions** for video encoding compatibility
+- **VRAM optimization** - includes halved dimensions for lower memory usage
+- **Outputs:** `width`, `height`, `aspect_ratio`, `halved_width`, `halved_height`
+
+### WAN2.1 Advanced Resolution
+- **12 extended video presets** - includes 4:3, 3:4, 1:1, and intermediate sizes
+- **Multiple aspect ratios** for diverse video generation needs
+- **VRAM optimization** - includes halved dimensions for lower memory usage
+- **Outputs:** `width`, `height`, `aspect_ratio`, `halved_width`, `halved_height`
+
+### Image Size Detector
+- **Dynamic size detection** - takes any image input and outputs dimensions
+- **Workflow integration** - determine existing image sizes in your workflow
+- **Outputs:** `width`, `height`
+
 ## Installation
 
-### Method 1: Git Clone (Recommended)
+### Method 1: ComfyUI Manager (Recommended)
+1. Open ComfyUI Manager in your ComfyUI interface
+2. Go to "Install Custom Nodes" 
+3. Search for "Image Size Tools" or install from Git URL: `https://github.com/TheLustriVA/ComfyUI-Image-Size-Tool`
+4. Click Install and restart ComfyUI
+
+### Method 2: Git Clone  
 ```bash
 cd ComfyUI/custom_nodes
 git clone https://github.com/TheLustriVA/ComfyUI-Image-Size-Tool.git
 ```
 
-### Method 2: ComfyUI Manager
-1. Open ComfyUI Manager
-2. Install from Git URL: `https://github.com/TheLustriVA/ComfyUI-Image-Size-Tool`
+### Method 3: ComfyUI Registry (Future)
+```bash
+comfy node install image-size-tool
+```
+*Note: Registry installation will be available once published to the official ComfyUI Registry*
 
 No additional dependencies to install - just restart ComfyUI.
 
 ## Usage
 
-1. **Add Node**: Search for "Image Size Tool" in the node menu
+1. **Add Node**: Search for "Image Size Tools" in the node menu
 2. **Select Resolution**: Choose from the dropdown (e.g., "1920×1080 (16:9) - Full HD")
 3. **Connect Outputs**: Wire `width` and `height` to your Empty Latent Image node
 4. **Generate**: Enjoy optimal quality with proper model constraints
@@ -81,6 +106,11 @@ No additional dependencies to install - just restart ComfyUI.
 ### Flux.1 Dev
 - **Flexible architecture** - handles 0.2 to 2 megapixels effectively  
 - **Hardware optimized** - common resolutions for practical generation
+
+### WAN2.1
+- **Video generation model** - optimized for 480p/720p video output
+- **VRAM considerations** - includes halved dimensions for memory optimization
+- **Even dimensions** - ensures video encoding compatibility
 
 ## Troubleshooting
 

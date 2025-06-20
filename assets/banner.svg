@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="840" height="360" viewBox="0 0 840 360" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2d2d2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="gridPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#333" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <rect width="840" height="360" fill="url(#bgGradient)"/>
+  <rect width="840" height="360" fill="url(#gridPattern)" opacity="0.2"/>
+  
+  <!-- Title Section -->
+  <text x="60" y="80" fill="#ffffff" font-family="Arial, sans-serif" font-size="48" font-weight="bold">ComfyUI</text>
+  <text x="60" y="130" fill="#4fc3f7" font-family="Arial, sans-serif" font-size="42" font-weight="bold">Image Size Tools</text>
+  <text x="60" y="160" fill="#cccccc" font-family="Arial, sans-serif" font-size="18">Resolution calculators for SD 1.5, SDXL,</text>
+  <text x="60" y="185" fill="#cccccc" font-family="Arial, sans-serif" font-size="18">Flux.1 Dev &amp; WAN2.1</text>
+  
+  <!-- Feature Icons -->
+  <g transform="translate(60, 220)">
+    <!-- SD 1.5 -->
+    <rect x="0" y="0" width="40" height="30" fill="none" stroke="#4fc3f7" stroke-width="2" rx="4"/>
+    <text x="20" y="45" text-anchor="middle" fill="#4fc3f7" font-family="Arial, sans-serif" font-size="12">SD 1.5</text>
+    
+    <!-- SDXL -->
+    <rect x="80" y="0" width="50" height="30" fill="none" stroke="#81c784" stroke-width="2" rx="4"/>
+    <text x="105" y="45" text-anchor="middle" fill="#81c784" font-family="Arial, sans-serif" font-size="12">SDXL</text>
+    
+    <!-- Flux -->
+    <rect x="160" y="0" width="45" height="35" fill="none" stroke="#ffb74d" stroke-width="2" rx="4"/>
+    <text x="182" y="50" text-anchor="middle" fill="#ffb74d" font-family="Arial, sans-serif" font-size="12">Flux.1</text>
+    
+    <!-- WAN2.1 -->
+    <rect x="240" y="0" width="55" height="25" fill="none" stroke="#f48fb1" stroke-width="2" rx="4"/>
+    <text x="267" y="40" text-anchor="middle" fill="#f48fb1" font-family="Arial, sans-serif" font-size="12">WAN2.1</text>
+    
+    <!-- Size Detector -->
+    <circle cx="340" cy="15" r="15" fill="none" stroke="#ce93d8" stroke-width="2"/>
+    <text x="340" y="5" text-anchor="middle" fill="#ce93d8" font-family="Arial, sans-serif" font-size="10">?</text>
+    <text x="340" y="45" text-anchor="middle" fill="#ce93d8" font-family="Arial, sans-serif" font-size="12">Detector</text>
+  </g>
+  
+  <!-- Right side visualization -->
+  <g transform="translate(500, 40)">
+    <!-- Large resolution frame -->
+    <rect x="0" y="0" width="280" height="180" fill="none" stroke="#4fc3f7" stroke-width="3" rx="8"/>
+    
+    <!-- Dimension indicators -->
+    <line x1="0" y1="-15" x2="280" y2="-15" stroke="#ff7043" stroke-width="2"/>
+    <line x1="-15" y1="0" x2="-15" y2="180" stroke="#ff7043" stroke-width="2"/>
+    
+    <!-- Width/Height labels -->
+    <text x="140" y="-25" text-anchor="middle" fill="#ff7043" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1920</text>
+    <text x="-35" y="95" text-anchor="middle" fill="#ff7043" font-family="Arial, sans-serif" font-size="14" font-weight="bold" transform="rotate(-90, -35, 95)">1080</text>
+    
+    <!-- Pixel grid sample -->
+    <g opacity="0.7">
+      <rect x="20" y="20" width="15" height="15" fill="#4fc3f7"/>
+      <rect x="35" y="20" width="15" height="15" fill="#81c784"/>
+      <rect x="50" y="20" width="15" height="15" fill="#ffb74d"/>
+      <rect x="65" y="20" width="15" height="15" fill="#f48fb1"/>
+      <rect x="80" y="20" width="15" height="15" fill="#ce93d8"/>
+      <rect x="95" y="20" width="15" height="15" fill="#90caf9"/>
+    </g>
+    
+    <!-- Smaller resolution frames -->
+    <rect x="20" y="200" width="80" height="60" fill="none" stroke="#81c784" stroke-width="2" rx="4"/>
+    <text x="60" y="275" text-anchor="middle" fill="#81c784" font-family="Arial, sans-serif" font-size="12">1024×1024</text>
+    
+    <rect x="120" y="200" width="60" height="45" fill="none" stroke="#ffb74d" stroke-width="2" rx="4"/>
+    <text x="150" y="260" text-anchor="middle" fill="#ffb74d" font-family="Arial, sans-serif" font-size="12">832×480</text>
+    
+    <rect x="200" y="200" width="70" height="50" fill="none" stroke="#f48fb1" stroke-width="2" rx="4"/>
+    <text x="235" y="265" text-anchor="middle" fill="#f48fb1" font-family="Arial, sans-serif" font-size="12">720p HD</text>
+  </g>
+  
+  <!-- Zero Dependencies badge -->
+  <rect x="650" y="10" width="150" height="30" fill="#2d5016" stroke="#4caf50" stroke-width="1" rx="15"/>
+  <text x="725" y="30" text-anchor="middle" fill="#4caf50" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Zero Dependencies</text>
+</svg>
