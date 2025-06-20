@@ -49,6 +49,30 @@ FLUX_RESOLUTIONS = {
     "2560×1440 (16:9) - 2K": {"width": 2560, "height": 1440, "ratio": "16:9"},
 }
 
+# WAN2.1 Simple Resolution Data - Core video generation resolutions
+WAN21_SIMPLE_RESOLUTIONS = {
+    "832×480 (16:9) - 480p Standard": {"width": 832, "height": 480, "ratio": "16:9"},
+    "1280×720 (16:9) - 720p HD": {"width": 1280, "height": 720, "ratio": "16:9"},
+    "480×832 (9:16) - 480p Vertical": {"width": 480, "height": 832, "ratio": "9:16"},
+    "720×1280 (9:16) - 720p Vertical": {"width": 720, "height": 1280, "ratio": "9:16"},
+}
+
+# WAN2.1 Advanced Resolution Data - Extended video generation resolutions
+WAN21_ADVANCED_RESOLUTIONS = {
+    "832×480 (16:9) - 480p Standard": {"width": 832, "height": 480, "ratio": "16:9"},
+    "1280×720 (16:9) - 720p HD": {"width": 1280, "height": 720, "ratio": "16:9"},
+    "480×832 (9:16) - 480p Vertical": {"width": 480, "height": 832, "ratio": "9:16"},
+    "720×1280 (9:16) - 720p Vertical": {"width": 720, "height": 1280, "ratio": "9:16"},
+    "640×480 (4:3) - Classic 480p": {"width": 640, "height": 480, "ratio": "4:3"},
+    "960×720 (4:3) - Classic 720p": {"width": 960, "height": 720, "ratio": "4:3"},
+    "480×640 (3:4) - Classic Vertical": {"width": 480, "height": 640, "ratio": "3:4"},
+    "720×960 (3:4) - Classic Vertical": {"width": 720, "height": 960, "ratio": "3:4"},
+    "720×720 (1:1) - Square 720p": {"width": 720, "height": 720, "ratio": "1:1"},
+    "480×480 (1:1) - Square 480p": {"width": 480, "height": 480, "ratio": "1:1"},
+    "1024×576 (16:9) - Intermediate": {"width": 1024, "height": 576, "ratio": "16:9"},
+    "576×1024 (9:16) - Intermediate Vertical": {"width": 576, "height": 1024, "ratio": "9:16"},
+}
+
 
 class SD15ResolutionNode:
     """
@@ -176,12 +200,100 @@ class ImageSizeDetectorNode:
         return (int(width), int(height))
 
 
+class WAN21ResolutionNode:
+    """
+    WAN2.1 Resolution Calculator
+    
+    Provides core video resolution presets for WAN2.1 models.
+    Includes standard 480p and 720p resolutions with option to halve dimensions
+    for lower VRAM usage.
+    """
+    
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "resolution": (list(WAN21_SIMPLE_RESOLUTIONS.keys()),),
+                "halve_resolution": ("BOOLEAN", {"default": False}),
+            },
+        }
+    
+    RETURN_TYPES = ("INT", "INT", "STRING", "INT", "INT")
+    RETURN_NAMES = ("width", "height", "aspect_ratio", "halved_width", "halved_height")
+    FUNCTION = "get_resolution"
+    CATEGORY = "Image Size Tool"
+    
+    def get_resolution(self, resolution, halve_resolution):
+        """Get width, height, aspect ratio, and optionally halved dimensions for WAN2.1"""
+        res_data = WAN21_SIMPLE_RESOLUTIONS[resolution]
+        width = res_data["width"]
+        height = res_data["height"]
+        aspect_ratio = res_data["ratio"]
+        
+        # Calculate halved dimensions (rounded to nearest even number for video compatibility)
+        halved_width = int(width // 2)
+        halved_height = int(height // 2)
+        
+        # Ensure even numbers for video encoding compatibility
+        if halved_width % 2 != 0:
+            halved_width += 1
+        if halved_height % 2 != 0:
+            halved_height += 1
+        
+        return (width, height, aspect_ratio, halved_width, halved_height)
+
+
+class WAN21AdvancedResolutionNode:
+    """
+    WAN2.1 Advanced Resolution Calculator
+    
+    Provides extended video resolution presets for WAN2.1 models.
+    Includes all standard resolutions plus additional aspect ratios and sizes
+    with option to halve dimensions for lower VRAM usage.
+    """
+    
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "resolution": (list(WAN21_ADVANCED_RESOLUTIONS.keys()),),
+                "halve_resolution": ("BOOLEAN", {"default": False}),
+            },
+        }
+    
+    RETURN_TYPES = ("INT", "INT", "STRING", "INT", "INT")
+    RETURN_NAMES = ("width", "height", "aspect_ratio", "halved_width", "halved_height")
+    FUNCTION = "get_resolution"
+    CATEGORY = "Image Size Tool"
+    
+    def get_resolution(self, resolution, halve_resolution):
+        """Get width, height, aspect ratio, and optionally halved dimensions for WAN2.1"""
+        res_data = WAN21_ADVANCED_RESOLUTIONS[resolution]
+        width = res_data["width"]
+        height = res_data["height"]
+        aspect_ratio = res_data["ratio"]
+        
+        # Calculate halved dimensions (rounded to nearest even number for video compatibility)
+        halved_width = int(width // 2)
+        halved_height = int(height // 2)
+        
+        # Ensure even numbers for video encoding compatibility
+        if halved_width % 2 != 0:
+            halved_width += 1
+        if halved_height % 2 != 0:
+            halved_height += 1
+        
+        return (width, height, aspect_ratio, halved_width, halved_height)
+
+
 # Node registration for ComfyUI
 NODE_CLASS_MAPPINGS = {
     "SD15ResolutionNode": SD15ResolutionNode,
     "SDXLResolutionNode": SDXLResolutionNode,
     "FluxResolutionNode": FluxResolutionNode,
     "ImageSizeDetectorNode": ImageSizeDetectorNode,
+    "WAN21ResolutionNode": WAN21ResolutionNode,
+    "WAN21AdvancedResolutionNode": WAN21AdvancedResolutionNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -189,4 +301,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "SDXLResolutionNode": "SDXL Resolution", 
     "FluxResolutionNode": "Flux.1 Dev Resolution",
     "ImageSizeDetectorNode": "Image Size Detector",
+    "WAN21ResolutionNode": "WAN2.1 Resolution",
+    "WAN21AdvancedResolutionNode": "WAN2.1 Resolution (Advanced)",
 }
