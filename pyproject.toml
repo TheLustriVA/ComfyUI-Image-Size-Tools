@@ -1,6 +1,6 @@
 [project]
 name = "image-size-tools"
-version = "0.3.2"
+version = "0.3.3"
 description = "Resolution calculators and image size detection for AI models (SD 1.5, SDXL, Flux.1 Dev, WAN2.1)"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -23,10 +23,10 @@ Repository = "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tools"
 "Bug Tracker" = "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tools/issues"
 
 [tool.comfy]
-PublisherId = "TheLustriVA"
-DisplayName = "Image Size Tools"
-Icon = "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tools/main/assets/icon.svg"
-Banner = "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tools/main/assets/banner.svg"
+PublisherId = "kgbicheno"
+DisplayName = "KGBicheno"
+Icon = "https://raw.githubusercontent.com/TheLustriVA/ComfyUI-Image-Size-Tools/main/assets/icon.svg"
+Banner = "https://raw.githubusercontent.com/TheLustriVA/ComfyUI-Image-Size-Tools/main/assets/banner.svg"
 requires-comfyui = ">=0.1.0"
 
 [build-system]

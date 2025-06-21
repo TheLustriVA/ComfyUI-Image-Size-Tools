@@ -2,6 +2,8 @@
 
 A professional resolution calculator node pack for ComfyUI that provides model-specific, constraint-aware image dimensions for optimal AI generation quality.
 
+![ComfyUI Image Size Tools Banner](assets/banner.svg)
+
 ## Why This Tool Exists
 
 Most existing resolution tools either:
