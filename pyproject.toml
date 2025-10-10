@@ -1,6 +1,6 @@
 [project]
 name = "image-size-tools"
-version = "0.3.3"
+version = "0.3.4"
 description = "Resolution calculators and image size detection for AI models (SD 1.5, SDXL, Flux.1 Dev, WAN2.1)"
 readme = "README.md"
 license = {file = "LICENSE"}
