@@ -24,7 +24,7 @@ Repository = "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tools"
 
 [tool.comfy]
 PublisherId = "kgbicheno"
-DisplayName = "KGBicheno"
+DisplayName = "Image Size Tool"
 Icon = "https://raw.githubusercontent.com/TheLustriVA/ComfyUI-Image-Size-Tools/main/assets/icon.svg"
 Banner = "https://raw.githubusercontent.com/TheLustriVA/ComfyUI-Image-Size-Tools/main/assets/banner.svg"
 requires-comfyui = ">=0.1.0"
